@@ -26,11 +26,11 @@ import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
-
+#if newgrounds
 #if windows
 import Discord.DiscordClient;
 #end
-
+#end
 #if cpp
 import sys.thread.Thread;
 #end
@@ -54,11 +54,11 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		#if polymod
+
 		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
 		#end
 		
-		#if sys
+
 		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
 		#end
@@ -90,7 +90,7 @@ class TitleState extends MusicBeatState
 
 		super.create();
 
-		// NGio.noLogin(APIStuff.API);
+		
 
 		#if ng
 		var ng:NGio = new NGio(APIStuff.API, APIStuff.EncKey);
