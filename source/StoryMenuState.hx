@@ -80,9 +80,15 @@ class StoryMenuState extends MusicBeatState
 	{
 		weekUnlocked = unlockWeeks();
 
-		#if windows
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Story Mode Menu", null);
+		#if #windows
+		
+#if android 
+	
+
+addVirtualPad(FULL,A_B);
+
+		#end
+		
 		#end
 
 		transIn = FlxTransitionableState.defaultTransIn;
